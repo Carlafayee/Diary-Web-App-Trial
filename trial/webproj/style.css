@@ -1,0 +1,36 @@
+ body{
+          background: rgb(255, 154, 162);
+      }
+
+   body {
+          background-image: linear-gradient(rgba(47, 23, 15, 0.25), rgba(47, 23, 15, 0.25)), url("./bg5.jpg");
+          background-attachment: fixed;
+          background-position: center;
+          background-size: cover;
+        }
+
+  #mainNav{
+          background: black;
+          color: white; !important
+          }
+
+  #mainNav .navbar-brand {
+          color: #e6a756;
+          }
+
+  #mainNav .navbar-nav .nav-item .nav-link {
+          color: rgb(255, 154, 162);
+          font-weight: 800;
+          }
+
+  #mainNav .navbar-nav .nav-item.active .nav-link {
+          color: rgb(213, 65, 119);
+          }
+
+  @media screen and (min-width: 992px) {
+          #mainNav {
+          position: relative;
+          top: 250px;
+          }
+        }
+
