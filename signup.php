@@ -2,18 +2,18 @@
     session_start();
     $message="";
     if(count($_POST)>0) {
-        $con = mysqli_connect('127.0.0.1:3306','root','','blog_database') or die('Unable To connect');
+        $con = mysqli_connect('127.0.0.1:3306','root','','my_diary') or die('Unable To connect');
 
-        $user_first_name = $_POST["user_first_name"];
-        $user_last_name = $_POST["user_last_name"];
+        $firstName = $_POST["firstName"];
+        $lastName = $_POST["lastName"];
 
-        $email = $_POST["user_email"];
-
+        $email = $_POST["email"];
+        $celNum = $_POST["celNum"];
         $password = $_POST["password"];
-        $user_name = $_POST["user_name"];
+        $userName = $_POST["userName"];
         $hash = password_hash($password,PASSWORD_DEFAULT);
-        $sql_query = "SELECT * FROM user_name='$user_name' or email='$email'";
-        $sql = "INSERT INTO `login_user` (`user_name`, `first_name`, `last_name`, `email`, `password`,`full_name`) VALUES ('$user_name', '$user_first_name', '$user_last_name', '$email', '$hash','$user_first_name $user_last_name ');";
+        $sql_query = "SELECT * FROM User_Name='$userName' or Email='$email'";
+        $sql = "INSERT INTO `users`(`First_Name`, `Last_Name`, `User_Name`, `Email`, `Cell_Num`, `Password`) VALUES ('$firstName', '$lastName', '$userName', '$email', '$celNum','$password');";
         if($con->query($sql_query) === TRUE){
             echo "There is existing email or username ";
         }
@@ -29,7 +29,7 @@
     }
     
     if(isset($_SESSION["id"])) {
-        header("Location:login.php");
+        header("Location:index.php");
     }
 ?>
 
@@ -91,40 +91,40 @@
                     <div class="col-lg-7 px-5 pt-5">
                         <h1 class="font-weigth-bold py-3">REGISTER NOW!</h1>
                         <h4>Fill out the form</h4>
-                        <form>
+                        <form method ="POST">
                             <div class="form-row">
                                 <div  class="col-lg-7">
-                                    <input type="text" placeholder="First Name" class="form-control my-3 p-4">  
+                                    <input name="firstName" type="text" placeholder="First Name" class="form-control my-3 p-4">  
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div  class="col-lg-7">
-                                    <input type="text" placeholder="Last Name" class="form-control my-3 p-4">  
+                                    <input name="lastName" type="text" placeholder="Last Name" class="form-control my-3 p-4">  
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div  class="col-lg-7">
-                                    <input type="text" placeholder="Username" class="form-control my-3 p-4">  
+                                    <input name="userName" type="text" placeholder="Username" class="form-control my-3 p-4">  
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div  class="col-lg-7">
-                                    <input type="tel" placeholder="Cellphone Number" class="form-control my-3 p-4">  
+                                    <input name="celNum" type="tel" placeholder="Cellphone Number" class="form-control my-3 p-4">  
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div  class="col-lg-7">
-                                    <input type="email" placeholder="Email Address" class="form-control my-3 p-4">  
+                                    <input name="email" type="email" placeholder="Email Address" class="form-control my-3 p-4">  
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div  class="col-lg-7">
-                                    <input type="password" placeholder="********" class="form-control my-3 p-4">  
+                                    <input name="password" type="password" placeholder="********" class="form-control my-3 p-4">  
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div  class="col-lg-7">
-                                    <button type="button" class="btn1">Sign Up</button>
+                                    <input type="submit" class="btn1">Sign Up</button>
                                 </div>
                             </div>
                             <p>Have an account already? <a href="login.html">Login Here</a></p>
