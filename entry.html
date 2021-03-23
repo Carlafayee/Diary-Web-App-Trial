@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <style>
+		*{
+		    outline:none;
+			border:none;
+			margin:0px;
+			padding:0px;
+			font-family:Courier, monospace;
+		}
+
+		body{
+              background-color: #add8e6;
+        }
+
+		#paper {
+			color:#FFF;
+			font-size:20px;
+		}
+
+		#margin {
+			margin-left:12px;
+			margin-bottom:20px;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			-o-user-select: none;
+			user-select: none; 
+		}
+
+		#text {
+			width:500px;
+			overflow:hidden;
+			background-color:#FFF;
+			color:#222;
+			font-family:Courier, monospace;
+			font-weight:normal;
+			font-size:24px;
+			resize:none;
+			line-height:40px;
+			padding-left:100px;
+			padding-right:100px;
+			padding-top:45px;
+			padding-bottom:34px;
+			background-image:url(https://static.tumblr.com/maopbtg/E9Bmgtoht/lines.png), url(https://static.tumblr.com/maopbtg/nBUmgtogx/paper.png);
+			background-repeat:repeat-y, repeat;
+			-webkit-border-radius:12px;
+			border-radius:12px;
+			-webkit-box-shadow: 0px 2px 14px #000;
+			box-shadow: 0px 2px 14px #000;
+			border-top:1px solid #FFF;
+			border-bottom:1px solid #FFF;
+		}
+		#date {
+			background-color:transparent;
+			border-bottom:3px solid #FFF;
+			color:#FFF;
+			font-size:20px;
+			font-family:Courier, monospace;
+			height:28px;
+			font-weight:bold;
+			width:220px;
+		}
+		#title {
+			background-color:transparent;
+			border-bottom:3px solid #FFF;
+			color:#FFF;
+			font-size:20px;
+			font-family:Courier, monospace;
+			height:28px;
+			font-weight:bold;
+			width:220px;
+		}
+		
+		#button{
+                border:none;
+                outline: none;
+                background-color:#E84A58;
+                color: rgb(199, 206, 234);
+                border-radius: 10px;
+                text-align: center;
+                padding: 15px;
+                font-weight: bold;
+                width: 50
+             }
+        #button:hover{
+                background: white;
+                border: 1px solid;
+                color: black;
+                color: rgb(199, 206, 234);
+                border-radius: 10px;
+                text-align: center;
+                padding: 15px;
+                font-weight: bold;
+                width: 50;
+             }
+		#wrapper {
+			width:700px;
+			height:auto;
+			margin-left:auto;
+			margin-right:auto;
+			margin-top:24px;
+			margin-bottom:100px;
+		}
+
+		.txt{
+			text-align: center;
+			size: 20px;
+		
+		}
+
+	</style>
+  </head>
+
+
+
+<body><br>
+<div class="txt">
+	<h1>New Diary Entry</h1>
+</div>
+
+<div class="container">
+	<div id="wrapper">
+		<div class='col-12 col-lg-auto'>
+			<form id="paper" method="get" action="">
+					<div  class="col-lg-8">
+						<div id="margin">Date: <input type="date" id="date" name="date"></div>
+					</div>
+					<div  class="col-lg-7">
+						<div id="margin">Title: <input id="title" type="text" name="title"></div>
+					</div>
+					<div  class="col-lg-7 text-center ">
+						<textarea placeholder="Write something about your day." id="text" name="text" rows="10"></textarea>  
+				    </div>
+			    	<div class="col-lg-7 text-center">
+						<input id="button" type="submit" value="save">
+  						<input id="button" type="reset" value="Reset">
+  						<button type="button" class="deletebtn">Delete</button>
+  						<a href="#" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-edit"></span> Edit
+        </a>
+					</div>
+			</form>
+		</div>
+	</div>
+</div>
