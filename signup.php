@@ -1,6 +1,7 @@
 <?php
     session_start();
     $message="";
+    // registration added
     if(count($_POST)>0) {
         $con = mysqli_connect('127.0.0.1:3306','root','','my_diary') or die('Unable To connect');
 
